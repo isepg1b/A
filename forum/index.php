@@ -1,4 +1,3 @@
-caca
 <?php
 //Cette fonction doit être appelée avant tout code html
 session_start();
