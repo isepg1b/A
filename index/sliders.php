@@ -5,7 +5,7 @@
         <title>liteAccordion - a horizontal accordion plugin for jQuery</title>
         <style>
             /* css for this page */
-            body { font: 14px/24px 'Helvetica Neue', Arial, sans-serif; color: #333; width: 960px; margin: 30px auto 60px; margin-top: 200px; background: #eee }
+            body { font: 14px/24px 'Helvetica Neue', Arial, sans-serif; color: #333; width: 960px; margin: 30px auto 60px; background: #eee }
             body > h2 { margin: 30px 0 15px; text-shadow: 1px 1px 0 white; border-bottom: 2px solid #333; padding-bottom: 5px }
             h1 { text-align: center; margin-bottom: 30px; text-shadow: 1px 1px 0 white }
             strong + p { margin-top: 0 }
@@ -17,7 +17,7 @@
         </style>
 
         <!-- liteAccordion css -->
-        <link href="css/liteaccordion.css" rel="stylesheet" />
+        <link href="style/liteaccordion.css" rel="stylesheet" />
 
         <!-- jQuery -->        
         <script src="js/jquery.min.js"></script>
@@ -78,7 +78,7 @@
         <script>
             (function($) {
               
-                $('#four').liteAccordion({ theme : 'light', firstSlide : 1, easing: 'easeOutBounce', activateOn: 'mouseover', rounded : true, autoPlay : true,cycleSpeed : 6000, pauseOnHover : true, easing : 'swing'});
+                $('#four').liteAccordion({ theme : 'light', firstSlide : 1, easing: 'easeOutBounce', activateOn: 'mouseover', rounded : true, autoPlay : true,cycleSpeed : 600, pauseOnHover : true, easing : 'swing'});
             })(jQuery);  
         </script>
 
