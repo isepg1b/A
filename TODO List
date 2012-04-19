@@ -1,0 +1,9 @@
+_Index :
+    Lier le module de connexion à la BDD
+
+_Page Recherche :
+    -Renvoyer l'id des résultats dans les parametres de l'url de la page restaurant
+
+_Page Restaurant :
+    -Transformer les adresses en position LatLng pour l'API Google maps
+    -Centrer le Google Map.

@@ -1,21 +1,3 @@
-<!DOCTYPE HTML>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>liteAccordion - a horizontal accordion plugin for jQuery</title>
-        <style>
-            /* css for this page */
-            body { font: 14px/24px 'Helvetica Neue', Arial, sans-serif; color: #333; width: 960px; margin: 30px auto 60px; background: #eee }
-            body > h2 { margin: 30px 0 15px; text-shadow: 1px 1px 0 white; border-bottom: 2px solid #333; padding-bottom: 5px }
-            h1 { text-align: center; margin-bottom: 30px; text-shadow: 1px 1px 0 white }
-            strong + p { margin-top: 0 }
-            dt { font-weight: bold }
-            dd { margin: 0 }
-            figure { display: block; width: 100%; height: 100%; margin: 0 }
-            figcaption { padding: 10px 15px; position: absolute; bottom: 20px; right: 30px; z-index: 3; background: black; background: rgba(0,0,0,0.7); color: white;
-                -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px }   
-        </style>
-
         <!-- liteAccordion css -->
         <link href="style/liteaccordion.css" rel="stylesheet" />
 
