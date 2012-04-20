@@ -6,36 +6,9 @@
 		<script type="text/javascript">
 			function initialiser() {
                             
-                            var geocoder = new GClientGeocoder();
-                                                        
-                            if (geocoder) {
-		geocoder.getLatLng(address,
-		function(point) {
-			if (!point) {
-				alert(address + ' could not be found');
-			} else {
-				map.setCenter(point, 13);
-				if ( marker != null )
-					map.removeOverlay( marker );
-				marker = new GMarker(point);
-				map.addOverlay(marker);
-				marker.openInfoWindowHtml(
-					'<b>Lat x Lon : </b>' + point.lat()+', '+point.lng()+'<br />'+
-					'<b>Address : </b>' + address
-				);
-
-				var lat = document.getElementById('lat');
-				var lon = document.getElementById('lon');
-				lat.value = point.lat();
-				lon.value = point.lng();
-
-				intGps2GpsDeg();
-			}
-		}
-	);
-	}
+                           
                             
-				var latlng = new google.maps.LatLng(46.779231, 6.659431);
+				var latlng = new google.maps.LatLng(48.84533,2.328308);
 				//objet contenant des propriétés avec des identificateurs prédéfinis dans Google Maps permettant
 				//de définir des options d'affichage de notre carte
 				var options = {

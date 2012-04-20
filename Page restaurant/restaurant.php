@@ -54,8 +54,11 @@
 		padding:0px;
 	}
 	</style>
+         <?php $reponse = $bdd->query('SELECT * FROM restaurant WHERE id_resto=\'1\'');
+    
+   $donnees = $reponse->fetch(); ?>
 </head>
-<body>
+
 	<div class="systeme_onglets">
         <div class="onglets">
             <span class="onglet_0 onglet" id="onglet_quoi" onclick="javascript:change_onglet('quoi');">Résumé</span>
@@ -66,20 +69,15 @@
         <div class="contenu_onglets">
             <div class="contenu_onglet" id="contenu_onglet_quoi">
             	<h1>Résumé</h1>
-                Un simple syst&egrave;me d'onglet utilisant les technologies:<br />
-                <ul>
-                    <li>(X)html</li>
-                    <li>CSS</li>
-                    <li>Javascript</li>
-                </ul>
+                                <?php  echo $donnees['resume'];  ?>
             </div>
             <div class="contenu_onglet" id="contenu_onglet_infos">
             	<h1>Infos</h1>
-               Da best Restaurant
+                <?php  echo $donnees['carte'];  ?>
             </div>
             <div class="contenu_onglet" id="contenu_onglet_avis">
             	<h1>Avis</h1>
-                Blahblahblah
+               <?php  echo $donnees['nb_commentaire'];  ?>
             </div>
             <div class="contenu_onglet" id="contenu_onglet_plan">
                
@@ -94,5 +92,3 @@
 		change_onglet(anc_onglet);
 	//-->
 	</script>
-</body>
-</html>

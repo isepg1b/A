@@ -7,3 +7,4 @@ _Page Recherche :
 _Page Restaurant :
     -Transformer les adresses en position LatLng pour l'API Google maps
     -Centrer le Google Map.
+    -aranger le css pour que les miniatures s'affichent correctement.

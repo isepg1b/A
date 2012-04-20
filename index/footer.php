@@ -1,4 +1,4 @@
-<html><footer>
+<footer>
                
                 <div id="footer">
                     
