@@ -22,31 +22,31 @@
         <div id="four">
             <ol>
                 <li>
-                    <h2><span>Slide One</span></h2>
+                    <h2><span>Chez Clément</span></h2>
                     <div>
                         <img src="img-demo/1.jpg" alt="image" />
                     </div>
                 </li>
                 <li>
-                    <h2><span>Slide Two</span></h2>
+                    <h2><span>Fouquet's</span></h2>
                     <div>
                         <img src="img-demo/2.jpg" alt="image" />
                     </div>
                 </li>
                 <li>
-                    <h2><span>Slide Three</span></h2>
+                    <h2><span>Léon</span></h2>
                     <div>
                         <img src="img-demo/3.jpg" alt="image" />
                     </div>
                 </li>
                 <li>
-                    <h2><span>Slide Four</span></h2>
+                    <h2><span>Créperie Josselin</span></h2>
                     <div>
                         <img src="img-demo/4.jpg" width="768" alt="image" />
                     </div>
                 </li>
                 <li>
-                    <h2><span>Slide Five</span></h2>
+                    <h2><span>Vin & Marée</span></h2>
                     <div>
                         <img src="img-demo/5.jpg" alt="image" />
                     </div>
@@ -60,7 +60,7 @@
         <script>
             (function($) {
               
-                $('#four').liteAccordion({ theme : 'light', firstSlide : 1, easing: 'easeOutBounce', activateOn: 'mouseover', rounded : true, autoPlay : true,cycleSpeed : 600, pauseOnHover : true, easing : 'swing'});
+                $('#four').liteAccordion({ theme : 'light', firstSlide : 1, easing: 'easeOutBounce', activateOn: 'mouseover', rounded : true, autoPlay : true,cycleSpeed : 6000, pauseOnHover : true, easing : 'swing'});
             })(jQuery);  
         </script>
 
