@@ -11,6 +11,8 @@
     	
     	if(verifCodePostal.test(newValue)){
     	document.getElementById("codePostal").value=verifCodePostal.exec(newValue);
+    	} else{
+    	document.getElementById("codePostal").value=null;
     	}
 
     	var verifNote = new RegExp("(^| )[\0-5]( |$)");
@@ -20,17 +22,27 @@
     	document.getElementById("note").innerHTML=verifNote.exec(newValue);
     	document.getElementById("range").value=verifNote.exec(newValue);
     	document.getElementById("range").innerHTML=verifNote.exec(newValue);
+    	}else{
+    	document.getElementById("note").value=4;
+    	document.getElementById("note").innerHTML=4;
+    	document.getElementById("range").value=4;
+    	document.getElementById("range").innerHTML=4;
     	}
 
     	var verifPrix = new RegExp("(^| )[\6-100]( |$)");
-    	prixDetecte = verifPrix.exec(newValue);
     		
-    	if(prixDetecte != ""){
-    	document.getElementById("prixmoyen").value=prixDetecte;
-		document.getElementById("prixmoyen").innerHTML=prixDetecte;
-		document.getElementById("prix").value=prixDetecte;
-		document.getElementById("prix").innerHTML=prixDetecte;
-    	}	
+    	if(verifPrix.test(newValue)){
+    	document.getElementById("prixmoyen").value=verifPrix.exec(newValue);
+		document.getElementById("prixmoyen").innerHTML=verifPrix.exec(newValue);
+		document.getElementById("prix").value=verifPrix.exec(newValue);
+		document.getElementById("prix").innerHTML=verifPrix.exec(newValue);
+    	}else{
+    	document.getElementById("prixmoyen").value=25;
+    	document.getElementById("prixmoyen").innerHTML=25;
+    	document.getElementById("prix").value=25;
+    	document.getElementById("prix").innerHTML=25;
+    	}
+    	
     	
     	var verifTypeChinois = new RegExp("(^| )(Chinois)( |$)","i");
     	var verifTypeGrandRestaurant = new RegExp("(^| )(Grand restaurant)( |$)","i");
@@ -53,26 +65,29 @@
 		document.getElementById("Americain").selected=true;}
     	else {document.getElementById("TypeRestaurant").selected=true;}
 		
-		var verifPaysFrance = new RegExp("(^| )(Chinois)( |$)","i");
-    	var verifPaysEspagne = new RegExp("(^| )(Grand restaurant)( |$)","i");
-    	var verifPaysItalie = new RegExp("(^| )(Italien)( |$)","i");
-    	var verifPaysRoyaumeUni = new RegExp("(^| )(Japonais)( |$)","i");
-    	var verifPaysEtatsUnis = new RegExp("(^| )(Restauration rapide)( |$)","i");
-    	var verifPaysAmericain = new RegExp("(^| )(Américain|Americain)( |$)","i");
+		var verifPaysFrance = new RegExp("(^| )(France)( |$)","i");
+    	var verifPaysEspagne = new RegExp("(^| )(Espagne)( |$)","i");
+    	var verifPaysItalie = new RegExp("(^| )(Italie)( |$)","i");
+    	var verifPaysRoyaumeUni = new RegExp("(^| )(Royaume-Uni|Royaume Uni)( |$)","i");
+    	var verifPaysEtatsUnis = new RegExp("(^| )(Etats-Unis|Etats Unis)( |$)","i");
+    	var verifPaysChine = new RegExp("(^| )(Chine)( |$)","i");
+    	var verifPaysJapon = new RegExp("(^| )(Japon)( |$)","i");
 
-    	if(verifTypeChinois.test(newValue)){
-		document.getElementById("Chinois").selected=true;}
-    	else if(verifTypeGrandRestaurant.test(newValue)){
-		document.getElementById("GrandRestaurant").selected=true;}
-    	else if(verifTypeItalien.test(newValue)){
-		document.getElementById("Italien").selected=true;}
-    	else if(verifTypeJaponais.test(newValue)){
-		document.getElementById("Japonais").selected=true;}
-    	else if(verifTypeRestaurationRapide.test(newValue)){
-		document.getElementById("RestaurationRapide").selected=true;}
-    	else if(verifTypeAmericain.test(newValue)){
-		document.getElementById("Americain").selected=true;}
-    	else {document.getElementById("TypeRestaurant").selected=true;}
+    	if(verifPaysFrance.test(newValue)){
+		document.getElementById("france").selected=true;}
+    	else if(verifPaysEspagne.test(newValue)){
+		document.getElementById("espagne").selected=true;}
+    	else if(verifPaysItalie.test(newValue)){
+		document.getElementById("italie").selected=true;}
+    	else if(verifPaysRoyaumeUni.test(newValue)){
+		document.getElementById("royaumeUni").selected=true;}
+		else if(verifPaysEtatsUnis.test(newValue)){
+		document.getElementById("etatsUnis").selected=true;}
+    	else if(verifPaysChine.test(newValue)){
+		document.getElementById("chine").selected=true;}
+    	else if(verifPaysJapon.test(newValue)){
+		document.getElementById("japon").selected=true;}
+    	else {document.getElementById("Pays").selected=true;}
 
     }    	    	
     </script>
@@ -143,12 +158,12 @@
 <!--Pays-->
             <label for="pays"></label>	
             <select name="pays" id="pays">
-                <option value="Pays">Pays</option>
-                <option value="france">France</option>
+                <option id="Pays" value="Pays">Pays</option>
+                <option id="france" value="france">France</option>
                 <option value="espagne">Espagne</option>
                 <option value="italie">Italie</option>
-                <option value="royaume-uni">Royaume-Uni</option>
-                <option value="etats-unis">Etats-Unis</option>
+                <option value="royaumeUni">Royaume-Uni</option>
+                <option value="etatsUnis">Etats-Unis</option>
                 <option value="chine">Chine</option>
                 <option value="japon">Japon</option>
             </select>
