@@ -1,13 +1,15 @@
 _Index :
     Lier le module de connexion à la BDD
 
-_Page Recherche :
+_Recherche :
     -Renvoyer l'id des résultats dans les parametres de l'url de la page restaurant
+    -Supprimer le bouton cacher et remplacer par onblurr
+    -Limiter la descente au clic pour la recherche avancée
 
 _Page Restaurant :
     -Transformer les adresses en position LatLng pour l'API Google maps
     -Centrer le Google Map.
-    -aranger le css pour que les miniatures s'affichent correctement.
+    -Arranger le css pour que les miniatures s'affichent correctement.
 
 
 Création resto/ WYSIWYG _Jb
