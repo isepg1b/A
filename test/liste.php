@@ -83,3 +83,7 @@ while ($donnees = mysql_fetch_array($retour)) // On fait une boucle pour lister 
 </table>
 </body>
 </html>
+
+<!--
+Adresse
+n° de tel
