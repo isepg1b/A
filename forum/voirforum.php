@@ -1,6 +1,6 @@
 <?php
 session_start();
-$titre="Voir un forum";
+$nom_resto="Voir un forum";
 include("includes/identifiant.php");
 include("includes/debut.php");
 

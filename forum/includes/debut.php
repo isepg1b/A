@@ -3,7 +3,7 @@
 <head>
 <?php
 //Si le titre est indiqué, on l'affiche entre les balises <title>
-echo (!empty($titre))?'<title>'.$titre.'</title>':'<title> Forum </title>';
+echo (!empty($nom_resto))?'<title>'.$nom_resto.'</title>':'<title> Forum </title>';
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" media="screen" type="text/css" title="Design" href="./css/style.css" />

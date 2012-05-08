@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_destroy();
-$titre="Déconnexion";
+$nom_resto="Déconnexion";
 include("includes/debut.php");
 include("includes/menu.php");
 

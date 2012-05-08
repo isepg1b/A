@@ -1,6 +1,6 @@
 <?php
 session_start();
-$titre="Voir un sujet";
+$nom_resto="Voir un sujet";
 include("includes/identifiant.php");
 include("includes/debut.php");
 include("includes/menu.php");

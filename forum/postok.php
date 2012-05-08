@@ -1,6 +1,6 @@
 <?php
 session_start();
-$titre="Poster";
+$nom_resto="Poster";
 include("includes/identifiant.php");
 include("includes/debut.php");
 include("includes/menu.php");
@@ -20,13 +20,13 @@ switch($action)
     $mess = $_POST['mess'];
 
     //Pareil pour le titre
-    $titre = $_POST['titre'];
+    $nom_resto = $_POST['titre'];
 
     //ici seulement, maintenant qu'on est sur qu'elle existe, on récupère la valeur de la variable f
     $forum = (int) $_GET['f'];
     $temps = time();
 
-    if (empty($message) || empty($titre))
+    if (empty($message) || empty($nom_resto))
     {
         echo'<p>Votre message ou votre titre est vide, 
         cliquez <a href="./poster.php?action=nouveautopic&amp;f='.$forum.'">ici</a> pour recommencer</p>';
@@ -39,7 +39,7 @@ switch($action)
         (forum_id, topic_titre, topic_createur, topic_vu, topic_time, topic_genre)
         VALUES(:forum, :titre, :id, 1, :temps, :mess)');
         $query->bindValue(':forum', $forum, PDO::PARAM_INT);
-        $query->bindValue(':titre', $titre, PDO::PARAM_STR);
+        $query->bindValue(':titre', $nom_resto, PDO::PARAM_STR);
         $query->bindValue(':id', $id, PDO::PARAM_INT);
         $query->bindValue(':temps', $temps, PDO::PARAM_INT);
         $query->bindValue(':mess', $mess, PDO::PARAM_STR);
@@ -236,7 +236,7 @@ case "repondremp": //Si on veut répondre
 
     //On récupère le titre et le message
     $message = $_POST['message'];
-    $titre = $_POST['titre'];
+    $nom_resto = $_POST['titre'];
     $temps = time();
 
     //On récupère la valeur de l'id du destinataire
@@ -249,7 +249,7 @@ case "repondremp": //Si on veut répondre
     VALUES(:id, :dest, :titre, :txt, :tps, '0 ')'); 
     $query->bindValue(':id',$id,PDO::PARAM_INT);   
     $query->bindValue(':dest',$dest,PDO::PARAM_INT);   
-    $query->bindValue(':titre',$titre,PDO::PARAM_STR);   
+    $query->bindValue(':titre',$nom_resto,PDO::PARAM_STR);   
     $query->bindValue(':txt',$message,PDO::PARAM_STR);   
     $query->bindValue(':tps',$temps,PDO::PARAM_INT);   
     $query->execute();
@@ -267,7 +267,7 @@ case "repondremp": //Si on veut répondre
 
     //On récupère le titre et le message
     $message = $_POST['message'];
-    $titre = $_POST['titre'];
+    $nom_resto = $_POST['titre'];
     $temps = time();
     $dest = $_POST['to'];
 
@@ -285,7 +285,7 @@ case "repondremp": //Si on veut répondre
         VALUES(:id, :dest, :titre, :txt, :tps, :lu)'); 
         $query->bindValue(':id',$id,PDO::PARAM_INT);   
         $query->bindValue(':dest',(int) $data['membre_id'],PDO::PARAM_INT);   
-        $query->bindValue(':titre',$titre,PDO::PARAM_STR);   
+        $query->bindValue(':titre',$nom_resto,PDO::PARAM_STR);   
         $query->bindValue(':txt',$message,PDO::PARAM_STR);   
         $query->bindValue(':tps',$temps,PDO::PARAM_INT);   
         $query->bindValue(':lu','0',PDO::PARAM_STR);   

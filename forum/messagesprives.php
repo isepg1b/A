@@ -1,6 +1,6 @@
 <?php
 session_start();
-$titre="Messages Privés";
+$nom_resto="Messages Privés";
 $balises = true;
 include("includes/identifiant.php");
 include("includes/debut.php");

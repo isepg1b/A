@@ -1,6 +1,6 @@
 <?php
 session_start();
-$titre="Poster";
+$nom_resto="Poster";
 $balises = true;
 include("includes/identifiant.php");
 include("includes/debut.php");

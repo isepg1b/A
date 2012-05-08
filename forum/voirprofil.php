@@ -1,6 +1,6 @@
 <?php
 session_start();
-$titre="Profil";
+$nom_resto="Profil";
 include("includes/identifiant.php");
 include("includes/debut.php");
 include("includes/menu.php");

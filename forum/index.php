@@ -3,7 +3,7 @@
 session_start();
 
 //On donne ensuite un titre à la page, puis on appelle notre fichier debut.php
-$titre = "Index du forum";
+$nom_resto = "Index du forum";
 include("includes/debut.php");
 include("includes/identifiant.php");
 include("connexion.php");

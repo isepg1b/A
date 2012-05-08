@@ -1,7 +1,7 @@
 
 <?php
 echo 'poupipou';
-$titre="Profil";
+$nom_resto="Profil";
 //On récupère la valeur de nos variables passées par URL
 $action = isset($_GET['action'])?htmlspecialchars($_GET['action']):'consulter';
 $membre = isset($_GET['m'])?(int) $_GET['m']:'';
