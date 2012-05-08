@@ -32,32 +32,32 @@ mysql_select_db("Poupipou");
 //-----------------------------------------------------
 if (isset($_POST['nom_resto']) AND isset($_POST['description']))
 {
-    $nom_resto = addslashes($_POST['nom_resto']);
+    $titre = addslashes($_POST['nom_resto']);
     $description = addslashes($_POST['description']);
     // On vérifie si c'est une modification de news ou non.
-    if ($_POST['id_resto'] == 0)
+    if ($_POST['id_news'] == 0)
     {
         // Ce n'est pas une modification, on crée une nouvelle entrée dans la table.
-        mysql_query("INSERT INTO restaurant VALUES('', '" . $nom_resto . "', '" . $description . "', '" . time() . "')");
+        mysql_query("INSERT INTO restaurant VALUES('', '" . $titre . "', '" . $description . "', '" . time() . "')");
     }
     else
     {
         // On protège la variable "id_news" pour éviter une faille SQL.
-        $_POST['id_resto'] = addslashes($_POST['id_resto']);
+        $_POST['id_news'] = addslashes($_POST['id_news']);
         // C'est une modification, on met juste à jour le titre et le contenu.
-        mysql_query("UPDATE restaurant SET nom_resto='" . $nom_resto . "', description='" . $description . "' WHERE id_resto='" . $_POST['id_resto'] . "'");
+        mysql_query("UPDATE restaurant SET titre='" . $titre . "', description='" . $description . "' WHERE id_resto='" . $_POST['id_news'] . "'");
     }
 }
  
 //--------------------------------------------------------
 // Vérification 2 : est-ce qu'on veut supprimer une news ?
 //--------------------------------------------------------
-if (isset($_GET['supprimer'])) // Si l'on demande de supprimer une news.
+if (isset($_GET['supprimer_news'])) // Si l'on demande de supprimer une news.
 {
     // Alors on supprime la news correspondante.
     // On protège la variable « id_news » pour éviter une faille SQL.
-    $_GET['supprimer'] = addslashes($_GET['supprimer']);
-    mysql_query('DELETE FROM restaurant WHERE id_resto=\'' . $_GET['supprimer'] . '\'');
+    $_GET['supprimer_news'] = addslashes($_GET['supprimer_news']);
+    mysql_query('DELETE FROM restaurant WHERE id_resto=\'' . $_GET['supprimer_news'] . '\'');
 }
 ?>
 <table><tr>
@@ -72,8 +72,8 @@ while ($donnees = mysql_fetch_array($retour)) // On fait une boucle pour lister 
 {
 ?>
 <tr>
-<td><?php echo '<a href="rediger.php?modifier=' . $donnees['id_resto'] . '">'; ?>Modifier</a></td>
-<td><?php echo '<a href="liste.php?supprimer=' . $donnees['id_resto'] . '">'; ?>Supprimer</a></td>
+<td><?php echo '<a href="rediger.php?modifier_news=' . $donnees['id_resto'] . '">'; ?>Modifier</a></td>
+<td><?php echo '<a href="liste.php?supprimer_news=' . $donnees['id_resto'] . '">'; ?>Supprimer</a></td>
 <td><?php echo stripslashes($donnees['nom_resto']); ?></td>
 <td><?php echo date('d/m/Y', $donnees['timestamp']); ?></td>
 </tr>

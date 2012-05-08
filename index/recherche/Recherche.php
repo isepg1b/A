@@ -45,7 +45,7 @@
     	
     	
     	var verifTypeChinois = new RegExp("(^| )(Chinois)( |$)","i");
-    	var verifTypeGrandRestaurant = new RegExp("(^| )(Grand restaurant)( |$)","i");
+    	var verifTypeGrandRestaurant = new RegExp("(^| )(Grand Restaurant)( |$)","i");
     	var verifTypeItalien = new RegExp("(^| )(Italien)( |$)","i");
     	var verifTypeJaponais = new RegExp("(^| )(Japonais)( |$)","i");
     	var verifTypeRestaurationRapide = new RegExp("(^| )(Restauration rapide)( |$)","i");
@@ -96,7 +96,7 @@
 
     function showValue(newValue)
         {if(newValue == 100){
-                document.getElementById("prix").innerHTML="plus de 100";
+                document.getElementById("prix").innerHTML="au moins 100";
             }
          else {
                 document.getElementById("prix").innerHTML=newValue;
@@ -149,28 +149,23 @@
     </head>
     
     <body>
-<!--FORMULAIRE-->
-        <form method="get" action="resultats.php">
-
-<!--Recherche-->
-            <input type="text" name="recherche" id="recherche" placeholder="Rechercher" maxlength="60" onkeyup="remplir(this.value)"/><br />
 
 <!--Pays-->
             <label for="pays"></label>	
             <select name="pays" id="pays">
                 <option id="Pays" value="Pays">Pays</option>
                 <option id="france" value="france">France</option>
-                <option value="espagne">Espagne</option>
-                <option value="italie">Italie</option>
-                <option value="royaumeUni">Royaume-Uni</option>
-                <option value="etatsUnis">Etats-Unis</option>
-                <option value="chine">Chine</option>
-                <option value="japon">Japon</option>
+                <option id="espagne" value="espagne">Espagne</option>
+                <option id="italie" value="italie">Italie</option>
+                <option id="royaumeUni" value="royaumeUni">Royaume-Uni</option>
+                <option id="etatsUnis" value="etatsUnis">Etats-Unis</option>
+                <option id="chine" value="chine">Chine</option>
+                <option id="japon" value="japon">Japon</option>
             </select>
 
 
 <!--Code Postal-->
-            <input type="text" name="code postal" placeholder="Code postal" maxlength="5" id="codePostal" onKeyPress="return scanToucheCodePostal(event);"/>
+            <input type="text" name="code postal" placeholder="Code postal" maxlength="5" id="codePostal" style="width:66px;" onKeyPress="return scanToucheCodePostal(event);"/>
 
 
 <!--Type de nourriture-->
@@ -196,7 +191,7 @@
 
 
 <!--Note-->
-            Note : 
+            Avis : 
             <input id="note" type="range" name="note" value="4" min="0" max="5" onchange="showValue2(this.value)"/>
             <span id="range">4</span> étoile(s)
 

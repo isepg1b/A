@@ -1,14 +1,13 @@
 $(document).ready(function() {
-	$("div.panel_button").click(function(){
+	$("#recherche").click(function(){
 		$("div#panel").animate({
 			height: "500px"
 		})
 		.animate({
-			height: "400px"
+			height: "100px"
 		}, "fast");
 		$("div.panel_button").toggle();
-	
-	});	
+                	});	
 	
    $("div#hide_button").click(function(){
 		$("div#panel").animate({

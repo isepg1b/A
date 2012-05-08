@@ -10,7 +10,10 @@
 
         </div>
         <section>
-            <div id="slider" style="margin-top: 8%;">
+            <div id="rechercher" style="text-align: center;">
+             <?php include('recherche/r.php'); ?> 
+            </div>
+            <div id="slider">
                 <?php include('sliders.php'); ?>
             </div>
         </section>

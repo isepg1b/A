@@ -16,36 +16,36 @@
 <?php
 mysql_connect("localhost", "root", "");
 mysql_select_db("Poupipou");
-if (isset($_GET['modifier'])) // Si on demande de modifier une news.
+if (isset($_GET['modifier_news'])) // Si on demande de modifier une news.
 {
     // On protège la variable « modifier_news » pour éviter une faille SQL.
-    $_GET['modifier'] = mysql_real_escape_string(htmlspecialchars($_GET['modifier']));
+    $_GET['modifier_news'] = mysql_real_escape_string(htmlspecialchars($_GET['modifier_news']));
     // On récupère les informations de la news correspondante.
-    $retour = mysql_query('SELECT * FROM restaurant WHERE id_resto=\'' . $_GET['modifier'] . '\'');
+    $retour = mysql_query('SELECT * FROM restaurant WHERE id_resto=\'' . $_GET['modifier_news'] . '\'');
     $donnees = mysql_fetch_array($retour);
     
     // On place le titre et le contenu dans des variables simples.
-    $nom_resto = stripslashes($donnees['nom_resto']);
+    $titre = stripslashes($donnees['nom_resto']);
     $description = stripslashes($donnees['description']);
-    $id = $donnees['id_resto']; // Cette variable va servir pour se souvenir que c'est une modification.
+    $id_news = $donnees['id_resto']; // Cette variable va servir pour se souvenir que c'est une modification.
 }
 else // C'est qu'on rédige une nouvelle news.
 {
     // Les variables $titre et $contenu sont vides, puisque c'est une nouvelle news.
-    $nom_resto = '';
+    $titre = '';
     $description = '';
-    $id = 0; // La variable vaut 0, donc on se souviendra que ce n'est pas une modification.
+    $id_news = 0; // La variable vaut 0, donc on se souviendra que ce n'est pas une modification.
 }
 ?>
 <form action="liste.php" method="post">
-<p>Titre : <input type="text" size="30" name="nom_resto" value="<?php echo $nom_resto; ?>" /></p>
+<p>Titre : <input type="text" size="30" name="nom_resto" value="<?php echo $titre; ?>" /></p>
 <p>
     Contenu :<br />
     <textarea name="description" cols="50" rows="10">
     <?php echo $description; ?>
     </textarea><br />
     
-    <input type="hidden" name="id_resto" value="<?php echo $id; ?>" />
+    <input type="hidden" name="id_resto" value="<?php echo $id_news; ?>" />
     <input type="submit" value="Envoyer" />
 </p>
 </form>

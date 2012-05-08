@@ -15,8 +15,11 @@
             <?php include('photos.php'); ?>
 
         </aside> 
+        <div id="rechercher" style="text-align: center;">
+             <?php include('recherche/r.php'); ?> 
+            </div>
         <section>
-            <div id="slider" style="margin-top: 8%;">
+            <div id="slider">
                 <?php include('restaurant.php'); ?>
             </div>
         </section>
