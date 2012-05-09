@@ -9,6 +9,13 @@
             <?php include('header.php'); ?> 
 
         </div>
+        
+         <aside  id="aside">
+            <a href="http://localhost/a/A/forum/index.php">Forum</a></br></br>
+            <a href="indexr.php">Restaurants</a></br></br>
+           
+
+        </aside> 
         <section>
             <div id="rechercher" style="text-align: center;">
              <?php include('recherche/r.php'); ?> 
