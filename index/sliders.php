@@ -18,16 +18,29 @@
         <![endif]-->         
     </head>
     <body>
-
+      
         <div id="four">
             <ol>
+ <?php
+mysql_connect("localhost", "root", "");
+mysql_select_db("Poupipou");
+// On récupère les cinq dernières news.
+$retour = mysql_query('SELECT * FROM news ORDER BY id DESC LIMIT 0, 5');
+while ($donnees = mysql_fetch_array($retour))
+{
+   
+      ?>
                 <li>
-                    <h2><span>Chez Clément</span></h2>
+                    <h2><span><?php echo $donnees['titre']; ?></span></h2>
                     <div>
-                        <img src="img-demo/1.jpg" alt="image" />
+                        <img src="<?php echo $donnees['contenu']; ?>" alt="image" />
                     </div>
                 </li>
-                <li>
+                
+           <?php
+}
+?>
+               <!-- <li>
                     <h2><span>Fouquet's</span></h2>
                     <div>
                         <img src="img-demo/2.jpg" alt="image" />
@@ -50,7 +63,7 @@
                     <div>
                         <img src="img-demo/5.jpg" alt="image" />
                     </div>
-                </li>
+                </li> -->
             </ol>
             <noscript>
                 <p>Please enable JavaScript to get the full experience.</p>

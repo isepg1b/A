@@ -26,26 +26,26 @@
 <h2><a href="rediger_news.php">Ajouter une news</a></h2>
 <?php
 mysql_connect("localhost", "root", "");
-mysql_select_db("test");
+mysql_select_db("Poupipou");
 //-----------------------------------------------------
 // Vérification 1 : est-ce qu'on veut poster une news ?
 //-----------------------------------------------------
 if (isset($_POST['titre']) AND isset($_POST['contenu']))
 {
     $titre = addslashes($_POST['titre']);
-    $description = addslashes($_POST['contenu']);
+    $contenu = addslashes($_POST['contenu']);
     // On vérifie si c'est une modification de news ou non.
     if ($_POST['id_news'] == 0)
     {
         // Ce n'est pas une modification, on crée une nouvelle entrée dans la table.
-        mysql_query("INSERT INTO news VALUES('', '" . $titre . "', '" . $description . "', '" . time() . "')");
+        mysql_query("INSERT INTO news VALUES('', '" . $titre . "', '" . $contenu . "', '" . time() . "')");
     }
     else
     {
         // On protège la variable "id_news" pour éviter une faille SQL.
         $_POST['id_news'] = addslashes($_POST['id_news']);
         // C'est une modification, on met juste à jour le titre et le contenu.
-        mysql_query("UPDATE news SET titre='" . $titre . "', contenu='" . $description . "' WHERE id='" . $_POST['id_news'] . "'");
+        mysql_query("UPDATE news SET titre='" . $titre . "', contenu='" . $contenu . "' WHERE id='" . $_POST['id_news'] . "'");
     }
 }
  

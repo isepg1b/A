@@ -17,16 +17,16 @@ width:70%;
 margin:auto; }
 </style> </head>
 <body>
-<h1>Bienvenue sur mon site !</h1> <p>Restos dans la bdd :</p>
+<p>Restos dans la bdd :</p>
 <?php
 mysql_connect("localhost", "root", ""); mysql_select_db("Poupipou");
 // On récupère les cinq dernières news.
-$retour = mysql_query('SELECT * FROM restaurant ORDER BY id_resto');
+$retour = mysql_query('SELECT * FROM restaurant ORDER BY id');
 while ($donnees = mysql_fetch_array($retour)) {
 ?>
 <div class="resto">
 <h3>
-<?php echo $donnees['nom_resto']; ?> <em>le <?php echo date('d/m/Y à H\hi',
+<?php echo $donnees['titre']; ?> <em>le <?php echo date('d/m/Y à H\hi',
 $donnees['timestamp']); ?></em> </h3>
 <p>
 <?php
