@@ -1,4 +1,4 @@
-            <?php include('header.php'); ?> 
+        <?php include('header.php'); ?> 
        <body>  
         <?php $reponse = $bdd->query('SELECT nom_resto FROM restaurant WHERE id_resto=\'1\'');
     
@@ -7,7 +7,7 @@
        <title>Restaurant  <?php  echo $donnees['nom_resto'];  ?></title>
     
     
-   <?php $reponse->closeCursor(); ?>
+   <?php $reponse->closeCursor(); ?> 
      
         <aside  id="aside">
             <a href="carte.php">Carte</a></br></br>
@@ -15,9 +15,9 @@
             <?php include('photos.php'); ?>
 
         </aside> 
-        <div id="rechercher" style="text-align: center;">
-             <?php include('recherche/r.php'); ?> 
-            </div>
+      <div id="rechercher" style="text-align: center;">
+             <?php //include('recherche/r.php'); ?> 
+            </div> 
         <section>
             <div id="slider">
                 <?php include('restaurant.php'); ?>
