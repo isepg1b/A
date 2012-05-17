@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
    <head>
        <title>Liste des news</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style type="text/css">
         h2, th, td
         {
@@ -24,28 +24,30 @@
     <body>
  
 <h2><a href="rediger_news.php">Ajouter une news</a></h2>
-<?php
+    <?php
+    
 mysql_connect("localhost", "root", "");
 mysql_select_db("Poupipou");
 //-----------------------------------------------------
 // Vérification 1 : est-ce qu'on veut poster une news ?
 //-----------------------------------------------------
-if (isset($_POST['titre']) AND isset($_POST['contenu']))
+if (isset($_POST['titre']) AND isset($_POST['contenu'])AND isset($_POST['img']))
 {
     $titre = addslashes($_POST['titre']);
+     $img = addslashes($_POST['img']);
     $contenu = addslashes($_POST['contenu']);
     // On vérifie si c'est une modification de news ou non.
     if ($_POST['id_news'] == 0)
     {
         // Ce n'est pas une modification, on crée une nouvelle entrée dans la table.
-        mysql_query("INSERT INTO news VALUES('', '" . $titre . "', '" . $contenu . "', '" . time() . "')");
+        mysql_query("INSERT INTO news VALUES('', '" . $titre . "', '" . $contenu . "', '" . time() . "','". $img."')");
     }
     else
     {
         // On protège la variable "id_news" pour éviter une faille SQL.
         $_POST['id_news'] = addslashes($_POST['id_news']);
         // C'est une modification, on met juste à jour le titre et le contenu.
-        mysql_query("UPDATE news SET titre='" . $titre . "', contenu='" . $contenu . "' WHERE id='" . $_POST['id_news'] . "'");
+        mysql_query("UPDATE news SET titre='" . $titre . "', contenu='" . $contenu . "', img='" . $img . "' WHERE id='" . $_POST['id_news'] . "'");
     }
 }
  

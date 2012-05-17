@@ -33,7 +33,7 @@ while ($donnees = mysql_fetch_array($retour))
                 <li>
                     <h2><span><?php echo $donnees['titre']; ?></span></h2>
                     <div>
-                        <img src="<?php echo $donnees['contenu']; ?>" alt="image" />
+                        <img src="images/<?php echo $donnees['img']; ?>" alt="image" />
                     </div>
                 </li>
                 

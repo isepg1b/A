@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
    <head>
        <title>Rédiger une news</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style type="text/css">
         h3, form
         {
@@ -27,6 +27,7 @@ if (isset($_GET['modifier_news'])) // Si on demande de modifier une news.
     // On place le titre et le contenu dans des variables simples.
     $titre = stripslashes($donnees['titre']);
     $contenu = stripslashes($donnees['contenu']);
+    $img = stripslashes($donnees['img']);
     $id_news = $donnees['id']; // Cette variable va servir pour se souvenir que c'est une modification.
 }
 else // C'est qu'on rédige une nouvelle news.
@@ -44,6 +45,13 @@ else // C'est qu'on rédige une nouvelle news.
     <textarea name="contenu" cols="50" rows="10">
     <?php echo $contenu; ?>
     </textarea><br />
+  
+    <INPUT TYPE="BUTTON" VALUE="Charger une image" ONCLICK="window.open ('uploadimg.php', 'nom_interne_de_la_fenetre', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no')">
+
+
+   <p>
+Nom de l'image : <input type="text" size="30" name="img" value="<?php echo $img; ?>"
+</p>
     
     <input type="hidden" name="id_news" value="<?php echo $id_news; ?>" />
     <input type="submit" value="Envoyer" />
