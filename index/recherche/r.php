@@ -1,11 +1,11 @@
             <style type="text/css">
 
 
-                #toppanel {
+                #toppan {
                     display: inline-block;
                     text-align: center;
                 }
-                #panel {
+                #pan {
                     width: 500px;
                     position: relative;
                     top: 1px;
@@ -16,7 +16,7 @@
                     overflow: hidden;
                       }
                                              
-                .panel_button {
+                .panel_butt {
                     margin-left: auto;
                     margin-right: auto;
                     position: relative;
@@ -44,11 +44,11 @@
             <input type="text" name="recherche" id="recherche" placeholder="Rechercher" maxlength="60" style="width:230px;" onkeyup="remplir(this.value)"/>
             <input type="submit" value="Rechercher">
             <br />
-            <div id="toppanel">
-                <div id="panel" style="height: 0px; display: block; ">
+            <div id="toppan">
+                <div id="pan" style="height: 0px; display: block; ">
                     <form method="get" action="resultats.php">
                      <?php include('Recherche.php'); ?> 
                 </div>
-                                            <div class="panel_button" id="hide_button" style="display: none; ">Cacher</div>
+                                            <div class="panel_butt" id="hide_butt" style="display: none; ">Cacher</div>
                                             </div>
                                             </html>

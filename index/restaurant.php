@@ -18,8 +18,9 @@
 		margin-left:3px;
 		margin-right:3px;
 		padding:3px;
-		border:1px solid black;
+		border:2px solid black;
 		cursor:pointer;
+                border-radius: 5px 5px 0 0;
                 
 	}
 	.onglet_0
@@ -36,10 +37,11 @@
 	.contenu_onglet
 	{
 		background-color:#dddddd;
-		border:1px solid black;
+		border:2px solid black;
 		margin-top:-1px;
 		padding:5px;
 		display:none;
+                border-radius: 0 5px 5px 5px;
             
 	}
 	ul
@@ -54,7 +56,8 @@
 		padding:0px;
 	}
 	</style>
-         <?php $reponse = $bdd->query('SELECT * FROM restaurant WHERE id_resto=\'1\'');
+         <?php 
+            $reponse = $bdd->query('SELECT * FROM restaurant2 WHERE id=\''. $_GET['id'].'\'');
     
    $donnees = $reponse->fetch(); ?>
 </head>
@@ -69,7 +72,7 @@
         <div class="contenu_onglets">
             <div class="contenu_onglet" id="contenu_onglet_quoi">
             	<h1>Résumé</h1>
-                                <?php  echo $donnees['resume'];  ?>
+                                <?php  echo $donnees['contenu'];  ?>
             </div>
             <div class="contenu_onglet" id="contenu_onglet_infos">
             	<h1>Infos</h1>
