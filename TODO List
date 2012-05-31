@@ -2,7 +2,6 @@ _Index :
     Lier le module de connexion à la BDD
 
 _Recherche :
-    -Renvoyer l'id des résultats dans les parametres de l'url de la page restaurant
     -Supprimer le bouton cacher et remplacer par onblurr
     -Limiter la descente au clic pour la recherche avancée
 
