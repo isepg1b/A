@@ -29,6 +29,6 @@ include('config.php')
                             <a href="http://localhost:8888/Poupipou/forum/register.php">Pas encore inscrit ?</a>
                             <input type="hidden" name="page" value="http://localhost:8888/Poupipou/"> </input></p></form></div>
             </link></meta>
-
+<script type="text/javascript" src="http://gettopup.com/releases/latest/top_up-min.js"></script>
     </div>
 

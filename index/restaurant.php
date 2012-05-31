@@ -75,8 +75,12 @@
                                 <?php  echo $donnees['contenu'];  ?>
             </div>
             <div class="contenu_onglet" id="contenu_onglet_infos">
-            	<h1>Infos</h1>
-                <?php  echo $donnees['carte'];  ?>
+            	<h1>Informations</h1>
+                <h2> <?php  echo $donnees['titre'];  ?></h2>
+                <p>Adresse : <?php  echo $donnees['adresse']; echo $donnees['codepostal']; echo $donnees['ville']; echo $donnees['pays'];  ?></p>
+                <p>Telephone : <?php  echo $donnees['tel'];  ?>  Mail : <?php  echo $donnees['mail'];  ?></p>
+                <p>Type : <?php  echo $donnees['type'];  ?>,  En trois mots ! : <?php  echo $donnees['caracs'];  ?>, Avec un nourriture de type : <?php  echo $donnees['nourriture'];  ?> </p>
+                
             </div>
             <div class="contenu_onglet" id="contenu_onglet_avis">
             	<h1>Avis</h1>

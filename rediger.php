@@ -8,7 +8,17 @@
         h3
         {
             text-align:center;
-                   }  
+            
+                   } 
+                   #formula{
+                       background:#bbbbbb;
+		display:inline-block;
+		margin-left:3px;
+		margin-right:3px;
+		padding:3px;
+		border:1px solid black;
+		cursor:pointer;
+                border-radius: 5px;
         </style>
     </head>
     
@@ -32,6 +42,13 @@ if (isset($_GET['modifier']))
     $tel = stripslashes($donnees['tel']);
     $mail = stripslashes($donnees['mail']);
     $contenu = stripslashes($donnees['contenu']);
+    $type = stripslashes($donnees['type']);
+    $ville = stripslashes($donnees['ville']);
+    $codepostal = stripslashes($donnees['codepostal']);
+    $caracs = stripslashes($donnees['caracs']);
+    $description = stripslashes($donnees['description']);
+    $nourriture = stripslashes($donnees['nourriture']);
+    $prixmoyen = stripslashes($donnees['prixmoyen']); 
     $id_news = $donnees['id']; // Cette variable va servir pour se souvenir que c'est une modification.
 }
 else 
@@ -43,30 +60,47 @@ else
     $id_news = 0; // La variable vaut 0, donc on se souviendra que ce n'est pas une modification.
 }
 ?>
-<form action="liste.php" method="post">
+<form id="formula"action="liste.php" method="post">
 <p>Nom : <input type="text" size="30" name="titre" value="<?php echo $titre; ?>" /></p>
 
 <p>
-    <p>Adresse : <input type="text" size="40" name="nom_resto" value="<?php echo $adresse; ?>" />
-    Code postal: <input type="text" size="20" name="nom_resto" value="<?php echo $codepostal; ?>" />
-    Pays: <input type="text" size="20" name="nom_resto" value="<?php echo $pays; ?>" />
-    Ville : <input type="text" size="30" name="nom_resto" value="<?php echo $ville; ?>" /></p>
+    <p>Adresse : <input type="text" size="40" name="adresse" value="<?php echo $adresse; ?>" />
+    Code postal: <input type="text" size="20" name="codepostal" value="<?php echo $codepostal; ?>" />
+    <select name="pays" id="pays">
+                <option id="Pays" value="Pays">Pays</option>
+                <option id="france" value="france">France</option>
+                <option id="espagne" value="espagne">Espagne</option>
+                <option id="italie" value="italie">Italie</option>
+                <option id="royaumeUni" value="royaumeUni">Royaume-Uni</option>
+                <option id="etatsUnis" value="etatsUnis">Etats-Unis</option>
+                <option id="chine" value="chine">Chine</option>
+                <option id="japon" value="japon">Japon</option>
+            </select><?php //echo $pays; ?>
+    Ville : <input type="text" size="30" name="ville" value="<?php echo $ville; ?>" /></p>
 
 Telephone : <input type="int" size="10" name="tel" value="<?php echo $tel; ?>" />
 Mail : <input type="mail" size="20" name="mail" value="<?php echo $mail; ?>" />
 
- <p>Type : <input type="text" size="30" name="nom_resto" value="<?php echo $Type; ?>" />
-    3 caracs: <input type="text" size="30" name="nom_resto" value="<?php echo $caracs; ?>" /></p>
+ <p><select name="type" id="type">
+                <option id="TypeRestaurant" value="TypeRestaurant">Type</option>
+                <option id="Chinois" value="Chinois">Chinois</option>
+                <option id="GrandRestaurant" value="Grand restaurant">Grand restaurant</option>
+                <option id="Italien" value="Italien">Italien</option>
+                <option id="Japonais" value="Japonais">Japonais</option>
+                <option id="RestaurationRapide" value="Restauration rapide">Restauration rapide</option>
+                <option id="Americain" value="Americain">Américain</option>
+            </select><?php //echo $type; ?>
+    3 caracs: <input type="text" size="30" name="caracs" value="<?php echo $caracs; ?>" /></p>
 <p>
 <p>
-    Contenu :<br />
-    <textarea class="ckeditor" cols="50" id="editor1" name="contenu" rows="10"><?php echo $contenu; ?></textarea>
+    Description :<br />
+    <textarea class="ckeditor" cols="50" id="contenu" name="contenu" rows="10"><?php echo $contenu; ?></textarea>
     </textarea><br />
     Carte du restaurant :<br />
-    <textarea class="ckeditor" cols="80" id="editor2" name="description" rows="10"><?php echo $description; ?></textarea><br />
-    <p>Type de nourriture: <input type="text" size="30" name="nom_resto" value="<?php echo $nourriture; ?>" /></p>
+    <textarea class="ckeditor" cols="80" id="description" name="description" rows="10"><?php echo $description; ?></textarea><br />
+    <p>Type de nourriture: <input type="text" size="30" name="nourriture" value="<?php echo $nourriture; ?>" /></p>
 <p>
-          <p>Prix moyen : <input type="text" size="10" name="nom_resto" value="<?php echo $prixmoyen; ?>" /></p>
+          <p>Prix moyen : <input type="text" size="10" name="prixmoyen" value="<?php echo $prixmoyen; ?>" /></p>
 <p>
     <input type="hidden" name="id_news" value="<?php echo $id_news; ?>" />
     <input type="submit" value="Envoyer" />

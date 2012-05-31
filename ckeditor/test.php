@@ -1,5 +1,6 @@
 <head>
 	<script type="text/javascript" src="ckeditor.js"></script>
+        <script type="text/javascript" src="config.js"></script>
 	</head>
         <body>
 	<form action="_posteddata.php" method="post">

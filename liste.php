@@ -31,26 +31,45 @@ mysql_select_db("Poupipou");
 if (isset($_POST['titre']) AND isset($_POST['contenu']))
 {
     $titre = addslashes($_POST['titre']);
-    $contenu = addslashes($_POST['contenu']);
     $adresse = addslashes($_POST['adresse']);
+    $pays = addslashes($_POST['pays']);
     $tel = addslashes($_POST['tel']);
     $mail = addslashes($_POST['mail']);
+    $contenu = addslashes($_POST['contenu']);
+    $ville = addslashes($_POST['ville']);
+    $codepostal = addslashes($_POST['codepostal']);
+    $type = addslashes($_POST['type']);
+    $caracs = addslashes($_POST['caracs']);
+    $description = addslashes($_POST['description']);
+    $nourriture = addslashes($_POST['nourriture']);
+    $prixmoyen = addslashes($_POST['prixmoyen']);
 
+    /*
+    id		 	 	 	 	 	 	
+	titre			 	 	 	 	 	 	 
+	contenu	 	 	 				 
+	timestamp		 	 	 	 	 	 	
+	adresse			 	 	 	 	 	 	 
+	pays			 	 	 	 	 	 	 
+	tel	 	 	 	 	 	 	
+	mail
+     * , '', '" . $adresse . "','" . $pays . "', '" . $tel . "', '" . $mail . "', '" . $codepostal . "', '" . $ville . "', '" . $type . "', '" . $caracs . "', '" . $description . "', '" . $nourriture . "', '" . $prixmoyen . "'
+    */
     if ($_POST['id_news'] == 0)
     {
         // Ce n'est pas une modification, on crée une nouvelle entrée dans la table.
-        mysql_query("INSERT INTO restaurant2 VALUES('', '" . $titre . "', '" . $contenu . "', '" . time() . "', '" . $adresse . "','" . $pays . "', '" . $tel . "', '" . $mail . "')");
+        mysql_query("INSERT INTO restaurant2 VALUES('', '" . $titre . "', '" . $contenu . "', '" . time() . "', '" . $adresse . ", '" . time() . "'','" . $pays . "', '" . $tel . "', '" . $mail . "', '" . $codepostal . "', '" . $ville . "', '" . $type . "', '" . $caracs . "', '" . $description . "', '" . $nourriture . "', '" . $prixmoyen . "')");
     }
     else
     {
         
         $_POST['id_news'] = addslashes($_POST['id_news']);
         // C'est une modification, on met juste à jour le titre et le contenu.
-        mysql_query("UPDATE restaurant2 SET titre='" . $titre . "', contenu='" . $contenu . "', '" . $adresse . "','" . $pays . "','" . $tel . "','" . $mail . "' WHERE id='" . $_POST['id_news'] . "'");
+        mysql_query("UPDATE restaurant2 SET titre='" . $titre . "', contenu='" . $contenu . "', adresse='" . $adresse . "', pays='" . $pays . "', tel='" . $tel . "', mail='" . $mail . "', codepostal='" . $codepostal . "', ville= '" . $ville . "', type='" . $type . "', caracs='" . $caracs . "', description='" . $description . "', nourriture='" . $nourriture . "', prixmoyen='" . $prixmoyen . "'   WHERE id='" . $_POST['id_news'] . "'");
     }
 }
 
-if (isset($_GET['supprimer_news'])) // Si l'on demande de supprimer une news.
+if (isset($_GET['supprimer'])) // Si l'on demande de supprimer une news.
 {
 
     $_GET['supprimer'] = addslashes($_GET['supprimer']);

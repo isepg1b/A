@@ -46,11 +46,11 @@ if (isset($_POST['titre']) AND isset($_POST['contenu']))
         
         $_POST['id_news'] = addslashes($_POST['id_news']);
         // C'est une modification, on met juste à jour le titre et le contenu.
-        mysql_query("UPDATE restaurant2 SET titre='" . $titre . "', contenu='" . $contenu . "', '" . $adresse . "','" . $pays . "','" . $tel . "','" . $mail . "' WHERE id='" . $_POST['id_news'] . "'");
+        mysql_query("UPDATE restaurant2 SET titre='" . $titre . "', contenu='" . $contenu . "','',adresse= '" . $adresse . "',pays='" . $pays . "',tel='" . $tel . "',mail='" . $mail . "' WHERE id='" . $_POST['id_news'] . "'");
     }
 }
 
-if (isset($_GET['supprimer_news'])) // Si l'on demande de supprimer une news.
+if (isset($_GET['supprimer'])) // Si l'on demande de supprimer une news.
 {
 
     $_GET['supprimer'] = addslashes($_GET['supprimer']);

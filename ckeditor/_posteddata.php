@@ -1,32 +1,20 @@
 <?php
-try
-{
-    $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-    $bdd = new PDO('mysql:host=localhost;dbname=Poupipou', 'root', '', $pdo_options);
+$value=$_POST['editor1'];
+$db = mysql_connect('localhost', 'root', '')  or die('Erreur de connexion '.mysql_error());
+// sélection de la base  
+
+    mysql_select_db('Poupipou',$db)  or die('Erreur de selection '.mysql_error()); 
+     
+    // on écrit la requête sql 
+    $sql = "INSERT INTO test VALUES('$value')"; 
+     
+    // on insère les informations du formulaire dans la table 
+    mysql_query($sql) or die('Erreur SQL !'.$sql.'<br>'.mysql_error()); 
+
+    // on affiche le résultat pour le visiteur 
+    echo 'Vos infos on été ajoutées.'; 
+     echo $value;
+
+    mysql_close();  // on ferme la connexion 
     
-   }
-catch(Exception $e)
-{
-    die('Erreur : '.$e->getMessage());
-}
-?>
-<?php
-
-if ( isset( $_POST ) )
-	$postArray = &$_POST ;			// 4.1.0 or later, use $_POST
-else
-	$postArray = &$HTTP_POST_VARS ;	// prior to 4.1.0, use HTTP_POST_VARS
-
-foreach ( $postArray as $sForm => $value )
-{
-	if ( get_magic_quotes_gpc() )
-		$postedValue = ( stripslashes( $value ) ) ;
-	else
-		$postedValue = ( $value ) ;
-
-?>
-		<?php/* echo /*htmlspecialchars($sForm; */?> 
-<html>	<?php echo $postedValue?> </html>
-	<?php
-}
 ?>

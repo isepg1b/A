@@ -1,16 +1,16 @@
         <?php include('header.php'); ?> 
        <body>  
-        <?php $reponse = $bdd->query('SELECT nom_resto FROM restaurant WHERE id_resto=\'1\'');
+        <?php $reponse = $bdd->query('SELECT titre FROM restaurant2 WHERE id=\''. $_GET['id'].'\'');
     
    $donnees = $reponse->fetch(); ?>
     
-       <title>Restaurant  <?php  echo $donnees['nom_resto'];  ?></title>
+       <title>Restaurant  <?php  echo $donnees['titre'];  ?></title>
     
     
    <?php $reponse->closeCursor(); ?> 
      
         <aside  id="aside">
-            <a href="carte.php">Carte</a></br></br>
+            <a href="carte.php?id=<?php echo $_GET['id'];?>" class="tu_ql">Carte</a></br></br>
             <a href="news.php">News</a></br></br>
             <?php include('photos.php'); ?>
 
