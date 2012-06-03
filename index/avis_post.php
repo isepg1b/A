@@ -1,15 +1,15 @@
 <?php
 try
 {
-
+mysql_connect("localhost", "root", "");
+mysql_select_db("Poupipou");
     
-    // Insertion du message à l'aide d'une requête préparée
-$pseudo=$_POST['pseudo'];
-    $req = $bdd->prepare('INSERT INTO avis (pseudo, message, id_resto) VALUES(?, ?, ?)');
-    $req->execute(array($pseudo, $_POST['message'], $_POST['id_resto']));
+    
+
+    mysql_query("INSERT INTO avis  VALUES('', '" . $_POST['pseudo'] . "','". $_POST['message']."','". $_POST['id_resto']."')");
     
     // Redirection du visiteur vers la page du minichat
-    header('Location: indexr.php');
+    header('Location: indexr.php?id='.$_POST[id_resto]);
     
 }
 catch(Exception $e)
