@@ -1,6 +1,6 @@
         <?php include('header.php'); ?> 
        <body>  
-        <?php $reponse = $bdd->query('SELECT titre FROM restaurant2 WHERE id=\''. $_GET['id'].'\'');
+        <?php $reponse = $bdd->query('SELECT * FROM restaurant2 WHERE id=\''. $_GET['id'].'\'');
     
    $donnees = $reponse->fetch(); ?>
     

@@ -88,7 +88,7 @@
             </div>
             <div class="contenu_onglet" id="contenu_onglet_plan">
                
-              <?php include'Plan.php'?>
+              <?php include('geocoder.php')?>
             
             </div>
         </div>
