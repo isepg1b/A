@@ -26,18 +26,22 @@
                 <?php include('restaurant.php'); ?>
             </div>
         </section>
-
     </body>
-    <?php include('footer.php'); }
-    
-    
-    else
+    <?php   }  else
     {
         
-        echo'<img src="404error.jpg"  >
-            Page inexistante, retourner à <a href="index.php">l\'accueil</a>';
+        echo' <div style="text-align: center;">
+            <img src="404error.jpg"> <br>
+            Page inexistante, retourner à <a href="index.php">l\'accueil</a>
+            
+</div>';
         
         
         
     }
+    
+    include('footer.php'); 
+    
+    
+
 ?>
