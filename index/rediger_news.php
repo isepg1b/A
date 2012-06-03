@@ -3,6 +3,7 @@
    <head>
        <title>Rédiger une news</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="http://localhost/a/A/ckeditor/ckeditor.js"></script>
         <style type="text/css">
         h3, form
         {
@@ -42,7 +43,7 @@ else // C'est qu'on rédige une nouvelle news.
 <p>Titre : <input type="text" size="30" name="titre" value="<?php echo $titre; ?>" /></p>
 <p>
     Contenu :<br />
-    <textarea name="contenu" cols="50" rows="10">
+    <textarea name="contenu"  class="ckeditor" cols="50" rows="10">
     <?php echo $contenu; ?>
     </textarea><br />
   
