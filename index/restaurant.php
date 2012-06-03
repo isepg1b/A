@@ -84,7 +84,7 @@
             </div>
             <div class="contenu_onglet" id="contenu_onglet_avis">
             	<h1>Avis</h1>
-               <?php  echo $donnees['nb_commentaire'];  ?>
+               <?php include ('avis.php'); ?>
             </div>
             <div class="contenu_onglet" id="contenu_onglet_plan">
                

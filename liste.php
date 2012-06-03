@@ -44,17 +44,7 @@ if (isset($_POST['titre']) AND isset($_POST['contenu']))
     $nourriture = addslashes($_POST['nourriture']);
     $prixmoyen = addslashes($_POST['prixmoyen']);
 
-    /*
-    id		 	 	 	 	 	 	
-	titre			 	 	 	 	 	 	 
-	contenu	 	 	 				 
-	timestamp		 	 	 	 	 	 	
-	adresse			 	 	 	 	 	 	 
-	pays			 	 	 	 	 	 	 
-	tel	 	 	 	 	 	 	
-	mail
-     * , '', '" . $adresse . "','" . $pays . "', '" . $tel . "', '" . $mail . "', '" . $codepostal . "', '" . $ville . "', '" . $type . "', '" . $caracs . "', '" . $description . "', '" . $nourriture . "', '" . $prixmoyen . "'
-    */
+    
     if ($_POST['id_news'] == 0)
     {
         // Ce n'est pas une modification, on crée une nouvelle entrée dans la table.

@@ -34,6 +34,7 @@ while ($donnees = mysql_fetch_array($retour))
                     <h2><span><?php echo $donnees['titre']; ?></span></h2>
                     <div>
                         <img src="images/<?php echo $donnees['img']; ?>" alt="image" />
+                        <figcaption><?php echo $donnees['contenu']; ?></figcaption>
                     </div>
                 </li>
                 
