@@ -2,8 +2,11 @@
        <body>  
         <?php $reponse = $bdd->query('SELECT * FROM restaurant2 WHERE id=\''. $_GET['id'].'\'');
     
-   $donnees = $reponse->fetch(); ?>
-    
+   $donnees = $reponse->fetch(); 
+    if (isset($donnees['titre'])){
+        
+            
+            ?>
        <title>Restaurant  <?php  echo $donnees['titre'];  ?></title>
     
     
@@ -25,4 +28,16 @@
         </section>
 
     </body>
-    <?php include('footer.php'); ?>
+    <?php include('footer.php'); }
+    
+    
+    else
+    {
+        
+        echo'<img src="404error.jpg"  >
+            Page inexistante, retourner à <a href="index.php">l\'accueil</a>';
+        
+        
+        
+    }
+?>
