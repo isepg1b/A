@@ -13,7 +13,7 @@
    <?php $reponse->closeCursor(); ?> 
      
         <aside  id="aside">
-            <a href="carte.php?id=<?php echo $_GET['id'];?>" class="tu_ql">Carte</a></br></br>
+            <a href="carte.php?id=<?php echo $_GET['id'];?>" toptions="effect = clip, layout = quicklook" class="tu_ql">Carte</a></br></br>
             <a href="news.php">News</a></br></br>
             <?php include('photos.php'); ?>
 
@@ -31,7 +31,7 @@
     {
         
         echo' <div style="text-align: center;">
-            <img src="404error.jpg"> <br>
+            <img src="images/404error.jpg"> <br>
             Page inexistante, retourner à <a href="index.php">l\'accueil</a>
             
 </div>';

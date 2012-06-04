@@ -1,11 +1,11 @@
             <style type="text/css">
 
 
-                #toppan {
+             #r   #toppan {
                     display: inline-block;
                     text-align: center;
                 }
-                #pan {
+              #r    #pan {
                     width: 500px;
                     position: relative;
                     top: 1px;
@@ -16,7 +16,7 @@
                     overflow: hidden;
                       }
                                              
-                .panel_butt {
+             #r     .panel_butt {
                     margin-left: auto;
                     margin-right: auto;
                     position: relative;
@@ -41,7 +41,7 @@
         <form method="get" action="resultats.php">
 
 <!--Recherche-->
-            <input type="text" name="recherche" id="recherche" placeholder="Rechercher" maxlength="60" style="width:230px;" onkeyup="remplir(this.value)"/>
+<div id="r">       <input type="text" name="recherche" id="recherche" placeholder="Rechercher" maxlength="60" style="width:230px;" onkeyup="remplir(this.value)"/>
             <input type="submit" value="Rechercher">
             <br />
             <div id="toppan">
@@ -51,4 +51,4 @@
                 </div>
                                             <div class="panel_butt" id="hide_butt" style="display: none; ">Cacher</div>
                                             </div>
-                                            </html>
+</div>                            </html>

@@ -1,0 +1,60 @@
+/* SlideLock Styles */
+form.hform p label { width: 150px; }
+p.quiet { padding-left: 150px; width: 200px; }
+span.quiet { font-size: .875em; }
+#locked { font-weight: bold; color: #333; }
+#unlocked { margin-left: 45px; }
+p.quiet img { margin: 0 0 0 40px; }	
+
+.ui-slider { 
+	position: relative; 
+	text-align: left; 
+	display: block; 
+	margin: 10px 0 10px 170px; 
+	width: 155px; 
+}
+.ui-slider-handle { 
+	position: absolute; 
+	z-index: 2; 
+	width: 16px; 
+	height: 16px; 
+	cursor: pointer; 
+	background: #333; 
+	top: -4px; 
+	margin-left: -8px; 
+	border: 1px solid #784807; 
+}
+.ui-slider-horizontal { 
+	height: 10px; 
+	background: #ddd; 
+	border: 1px solid #ccc; 
+}
+.ui-slider-handle:hover, .ui-state-hover, .ui-state-focus, .ui-state-active { background: #aaa; }
+
+
+/* CSS3 ---------------------------------------------------- */
+.ui-slider-handle { 
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background: -moz-linear-gradient(top, #f60, #930);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f60), to(#930));
+}
+.ui-slider-horizontal { 
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background: -moz-linear-gradient(left, #fff, #ddd);
+	background: -webkit-gradient(linear, left top, right top, from(#fff), to(#ddd));
+}
+a.ui-state-hover, a.ui-state-focus { 
+	background: -moz-linear-gradient(top, #666, #333);
+	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#333));
+	box-shadow: 0px 0px 10px #f60;
+	-moz-box-shadow: 0px 0px 10px #f60;
+	-webkit-box-shadow: 0px 0px 10px #f60;
+}
+a.ui-state-active { 
+	background: -moz-linear-gradient(top, #ddd, #aaa);
+	background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#aaa));
+}

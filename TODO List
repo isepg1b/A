@@ -1,29 +1,19 @@
-_Index :
-    Lier le module de connexion à la BDD
 
-_Recherche :
-    -Supprimer le bouton cacher et remplacer par onblurr
-    -Limiter la descente au clic pour la recherche avancée
-
-_Page Restaurant :
-    -Transformer les adresses en position LatLng pour l'API Google maps
-    -Centrer le Google Map.
-    -Arranger le css pour que les miniatures s'affichent correctement.
-
-
-Création resto/ WYSIWYG _Jb
 Moteur de recherche _W&A
 Contact+mentions légales, etc _Ac&Geoff
 Forum _Ben
     >Sécurité
-Avis ( cf tuto sdz, livre d'or)
+
+Avis
+    Ajout des notes
+
 Debug:
     >ggl maps
-    >photos
+
 Top resto
     >avec compteur de clicks
     >moyenne des notes
-Intro svg// impress.js _Jb 
+Intro svg// impress.js _AC+ Geoff 
 Admin  
     >modération _W
     >validation 
@@ -36,6 +26,3 @@ catégorie_event
 _sécurité
 
 Alex, clarifie moi ton code.
-
-
-Piwik.

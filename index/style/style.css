@@ -1,4 +1,32 @@
-
+  h9
+        {
+            text-align:center;
+            
+                   } 
+                   #formula{
+                       background:#bbbbbb;
+		display:inline-block;
+		margin-left:3px;
+		margin-right:3px;
+		padding:3px;
+		border:1px solid black;
+		cursor:pointer;
+                border-radius: 5px;}
+                   
+         #liste h2, th, td
+        {
+            text-align:center;
+        }
+         #liste table
+        {
+            border-collapse:collapse;
+            border:2px solid black;
+            margin:auto;
+        }
+         #liste th, td
+        {
+            border:1px solid black;
+        }                   
 
 #header  .espagnol a{
     position: absolute;
